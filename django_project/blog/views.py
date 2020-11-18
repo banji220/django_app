@@ -1,5 +1,5 @@
 from django.shortcuts import render
-
+from .models import Post
 posts = [
     {
         "author": "Banji", 
@@ -22,7 +22,7 @@ def home(request):
     # the first Item of render() function should be request and the we define our templates, blog/home.htlm, blog is sub-dir !
     # request ----> HttpResponse (we should either use HttpResponse or exception!)
     context = {
-        "posts" : posts
+        "posts" : Post.objects.all()
     }
     return render(request, "blog/home.html", context)
 
