@@ -1,19 +1,5 @@
 from django.shortcuts import render
 from .models import Post
-posts = [
-    {
-        "author": "Banji", 
-        "title" : "Blog Post 1", 
-        "content" : "First Post Content", 
-        "date_posted": "Jan 20th, 2020",
-    },
-    {
-        "author": "James", 
-        "title" : "Blog Post 2", 
-        "content" : "Second Post Content", 
-        "date_posted": "Aug 5th, 2020",
-    }
-]
 
 
 
