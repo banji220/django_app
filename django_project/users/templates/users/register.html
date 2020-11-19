@@ -1,5 +1,15 @@
 {% extends "blog/base.html" %}
 
 {% block content %}
-    <div class="content-section"></div>
+    <div class="content-section">
+        <form method="POST">
+            {% csrf_token %}
+            <fieldset class="form-group">
+                <legend class="border-bottom mb-4">Join Today</legend>
+                
+                <!-- This is the form that we created in the dictionary in users/views.py in the register() function -->
+                {{ form }}
+            </fieldset>
+        </form>
+    </div>
 {% endblock content %}
