@@ -10,7 +10,7 @@
                 
                 <!-- This is the form that we created in the dictionary in users/views.py in the register() function -->
                 <!-- {{ form.as_p }}, it means render form as a paragraph(in paragraph <p></p> tag)!" -->
-                {{ form.as_p }}
+                {{ form|crispy }}
             </fieldset>
             <div class="form-group">
                 <button class="btn btn-outline-info" type="submit">Sing Up</button>
