@@ -1,3 +1,4 @@
+import os
 """
 Django settings for django_project project.
 
@@ -120,8 +121,13 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
-STATIC_URL = '/static/'
-CRISPY_TEMPLATE_PACK = "bootstrap4"
+STATIC_URL = "/static/"
 
+# BASE_DIR = /home/banji-x/Projects/django_app/django_project
+MEDIA_ROOT = os.path.join(BASE_DIR, "media")
+MEDIA_URL = "/media/"
+
+
+CRISPY_TEMPLATE_PACK = "bootstrap4"
 LOGIN_REDIRECT_URL = "blog-home"
 LOGIN_URL = "login"
