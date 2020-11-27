@@ -10,6 +10,19 @@
                 <p class="text-secondary"> {{ user.email }} </p>
             </div>
         </div>
-        <!-- FROM HERE -->
+        <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <fieldset class="form-group">
+                <legend class="border-bottom mb-4">Profile Info</legend>
+                
+                <!-- This is the form that we created in the dictionary in users/views.py in the register() function -->
+                <!-- {{ form.as_p }}, it means render form as a paragraph(in paragraph <p></p> tag)!" -->
+                {{ u_form|crispy }}
+                {{ p_form|crispy }}
+            </fieldset>
+            <div class="form-group">
+                <button class="btn btn-outline-info" type="submit">Update</button>
+            </div>
+        </form>
     </div>
 {% endblock content %}
