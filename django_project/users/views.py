@@ -24,6 +24,7 @@ def profile(request):
         if user_update_form.is_valid() and image_profile_update_form.is_valid():
             user_update_form.save()
             image_profile_update_form.save()
+            messages.success(request, "Your Profile has been updated")
     else:
         user_update_form = UserUpdateForm(instance=request.user)
         image_profile_update_form = ProfileUpdateForm(instance=request.user.profile)
