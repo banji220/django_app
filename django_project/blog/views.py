@@ -55,7 +55,7 @@ class PostUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
 
 class PostDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
     model = Post
-    success_url = "/"
+    success_url = "/" # success_url will redirect the users to the url that we define after deleting post
     def test_func(self):
         post = self.get_object()
         if self.request.user == post.author:
