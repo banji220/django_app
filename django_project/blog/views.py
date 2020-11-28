@@ -4,7 +4,6 @@ from .models import Post
 
 
 
-
 def home(request):
     # the first Item of render() function should be request and the we define our templates, blog/home.htlm, blog is sub-dir !
     # request ----> HttpResponse (we should either use HttpResponse or exception!)
@@ -27,6 +26,10 @@ class PostDetailView(DetailView):
 class PostCreateView(CreateView):
     model = Post
     fields = ["title", "content"]
+    
+    def form_valid(self, form):
+        form.instance.author = self.request.user
+        return super().form_valid(form)
     
 def about(request):
     return render(request, "blog/about.html", {"title": "About"})
